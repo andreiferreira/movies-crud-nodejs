@@ -40,8 +40,7 @@ router.post('/registro', (req, res) =>{
                     const novoUsuario = new User ({
                         nome: req.body.nome,
                         email: req.body.email,
-                        senha: req.body.senha,
-                        ehAdmin: 1
+                        senha: req.body.senha
                     })
 
                     console.log(novoUsuario.senha)
