@@ -1,3 +1,19 @@
-<h2>Lista de generos de filmes</h2>
+<h2 class="mt-4">Lista de generos de filmes</h2>
+
+{{#each genero}}
+    <div class="card mb-2">
+        <card class="body">
+            <h4>{{nome}}</h4>
+            <p>Descrição: {{descricao}}</p>
+            <p>Slug: {{slug}}</p>
+
+            <a href="/admin/generos/edicao/{{_id}}"><button class="btn btn-success ">Editar gênero</button></a>
+            
+            <form action="/admin/generos/exclusao/{{_id}}" method="POST">
+                <button class="btn btn-danger" type="submit">Excluir gênero</button>
+            </form>
+        </card>
+    </div>
+{{/each}}
 
 <a href="/admin/generos/add"><button class="btn btn-success">Cadastrar novo gênero</button></a>

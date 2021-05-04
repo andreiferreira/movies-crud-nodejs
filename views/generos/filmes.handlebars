@@ -1,0 +1,12 @@
+<h1>{{genero.nome}}</h1>
+{{#each filmes}}
+<div class="card mb-3 mt-3">
+    <div class="card-body">
+        <h3>{{titulo}}</h3>
+        <p>Diretor: {{diretor}}  |  Lançamento: {{lancamento}}</p>
+        <a href="/filme/{{slug}}"><button class="mt-3 btn btn-success">Ver sinopse</button></a>
+    </div>
+</div>
+{{else}}
+    <h2>Nenhum filme encontrado.</h2>
+{{/each}}

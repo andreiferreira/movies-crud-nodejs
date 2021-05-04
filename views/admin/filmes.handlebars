@@ -1,0 +1,21 @@
+<h2 class="mt-4">Catálogo de filmes</h2>
+
+<a href="/admin/filmes/add"><button class="btn btn-success">Cadastrar novo filme</button></a>
+
+{{#each filmes}}
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h4>{{titulo}}, {{lancamento}}</h4>
+            <small>Diretor: {{diretor}} | Gênero: {{genero.nome}} </small>
+            <p class="mt-3">{{sinopse}}</p>
+            <a href="/admin/filmes/edicao/{{_id}}"><button class="btn btn-success">Editar filme</button></a>
+              <form action="/admin/filmes/exclusao/{{_id}}" method="POST">
+                <button class="btn btn-danger" type="submit">Excluir filme</button>
+            </form>          
+
+        </div>
+    </div>
+{{/each}}
+
+

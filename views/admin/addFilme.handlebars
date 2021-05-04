@@ -1,0 +1,44 @@
+{{#each errors}}
+    <div class="alert alert-danger">{{message}}</div>
+{{else}}
+
+{{/each}}
+<h2 class="mt-4">Adicionar Filme</h2>
+
+<div class="card">
+    <div class="card-body">
+        <form accept="/admin/filmes/add" method="POST">
+            <div class="mb-3">
+                <label>Título:</label>
+                <input type="text" name="titulo" class="form-control" id="titulo"  placeholder="Título do filme">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Diretor:</label>
+                <input type="text" name="diretor" class="form-control" id="diretor" rows="3" placeholder="Diretor do filme"></input>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Gênero</label>
+                <select name="genero" class="form-control custom-select" rows="3" placeholder="Gênero do filme">
+                    {{#each generos}}
+                        <option value="{{_id}}">{{nome}}</option>
+                    {{else}}
+                        <option value="0">Nenhum gênero de filme registrado</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ano de lançamento:</label>
+                <input type="number" name="lancamento" class="form-control" id="lancamento" rows="3" placeholder="Ano de lançamento do filme"></input>
+            </div>    
+            <div class="mb-3">
+                <label class="form-label">Sinopse:</label>
+                <textarea name="sinopse" class="form-control" id="sinopse" rows="3" placeholder="Sinopse do filme"></textarea>
+            </div>   
+            <div class="mb-3">
+                <label class="form-label">Slug:</label>
+                <input type="text" name="slug" class="form-control" id="slug" rows="3" placeholder="Slug"></input>
+            </div>                
+            <button type="submit" class="btn btn-success">Cadastrar filme</button>
+        </form>
+    </div>
+</div>
